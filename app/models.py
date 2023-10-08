@@ -3,8 +3,8 @@ from django.db import models
 
 class MenuModel(models.Model):
     """Древовидное меню"""
-    name = models.CharField('Название', max_length=150, help_text='Максимум 100 символов')
-    named_url = models.CharField('URL', max_length=150, null=True, blank=True)
+    name = models.CharField('Название', max_length=150, unique=True, help_text='Максимум 100 символов')
+    named_url = models.CharField('URL', max_length=150, unique=True, null=True, blank=True)
     parent = models.ForeignKey('self', null=True, blank=True, related_name='children', help_text='Выберете пункт',
                                verbose_name='Родитель', on_delete=models.CASCADE)
 
