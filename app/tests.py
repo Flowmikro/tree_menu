@@ -1,7 +1,5 @@
 from django.test import TestCase
 from django.urls import reverse
-from django.template import Template, Context
-from django.template.exceptions import TemplateSyntaxError
 
 from app.models import MenuModel
 
